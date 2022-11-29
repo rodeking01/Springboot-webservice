@@ -1,0 +1,31 @@
+{{>layout/header}}
+    <h1>스트링 부트로 시작하는 웹 서비스</h1>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-6">
+                <a href="/products/save" role="button" class="btn btn-primary">글 등록</a>
+            </div>
+        </div>
+        <br>
+        <table class="table table-horizontal table-bordered">
+            <thead class="thead-strong">
+            <tr>
+                <th>게시글 번호</th>
+                <th>상품명</th>
+                <th>상품가격</th>
+                <th>상품설명</th>
+            </tr>
+            </thead>
+            <tbody id="tbody">
+            {{#products}}
+                <tr>
+                    <td>{{p_id}}</td>
+                    <td><a href="/products/update/{{p_id}}">{{p_name}}</a></td>
+                    <td>{{p_price}}</td>
+                    <td>{{p_desc}}</td>
+                </tr>
+            {{/products}}
+            </tbody>
+        </table>
+    </div>
+{{>layout/footer}}
